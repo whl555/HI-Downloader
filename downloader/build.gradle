@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -33,6 +35,11 @@ dependencies {
     implementation deps['okhttp']
     implementation deps['okhttp-log']
     implementation deps['greendao']
+
+    implementation deps['lifecycle-extensions']
+    implementation deps['core-ktx']
+    implementation deps['lifecycle-ktx']
+    implementation deps['kotlin-stdlib']
 
     testImplementation deps['junit']
     androidTestImplementation deps['test-core']
