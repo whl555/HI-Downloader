@@ -187,6 +187,9 @@ class DownloadManager implements DownloadListener, DownloadController, DownloadI
         }
     }
 
+    /**
+     * 从就绪队列中取出DownloadTask去运行
+     */
     private void schedule() {
 
         int maxRunningTask = allowDownload ? this.maxRunningTask : 0;
@@ -440,6 +443,9 @@ class DownloadManager implements DownloadListener, DownloadController, DownloadI
         }
     }
 
+    /**
+     * 将DownloadTask排队
+     */
     private void enqueueTask(long id, boolean restart, boolean scheduleAfterEnqueue) {
         DownloadTask downloadTask = taskTable.get(id);
         if (downloadTask == null) {
